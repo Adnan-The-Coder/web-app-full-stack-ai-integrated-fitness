@@ -1,3 +1,4 @@
+import ExperienceHealth from "@/components/ExperienceHealth";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
@@ -7,6 +8,7 @@ export default function Home() {
     <>
     <Navbar/>
     <Hero/>
+    <ExperienceHealth/>
     <Footer/>
     <Footer/>
     <Footer/>
