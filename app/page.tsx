@@ -10,11 +10,6 @@ export default function Home() {
     <Hero/>
     <ExperienceHealth/>
     <Footer/>
-    <Footer/>
-    <Footer/>
-    <Footer/>
-    <Footer/>
-    <Footer/>
     </>
   );
 }
