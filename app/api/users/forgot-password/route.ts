@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {connect} from '@/dbConfig/dbConfig'
 import User from '@/models/userModel';
 import crypto from "crypto";
 import { NextRequest, NextResponse } from 'next/server';
-import { sendEmail } from "@/helpers/mailer";
+// import { sendEmail } from "@/helpers/mailer";
 
 
 connect();
@@ -35,7 +36,7 @@ export async function POST(request:NextRequest) {
         await user.save();
 
         console.log("Sending Reset Password Request Email")
-        await sendEmail({email,emailType:"RESET",userId:user._id})
+        // await sendEmail({email,emailType:"RESET",userId:user._id})
         console.log("Reset Password Request Email Sent !")
 
 

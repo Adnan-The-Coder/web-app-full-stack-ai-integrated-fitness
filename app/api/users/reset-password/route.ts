@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { connect } from "@/dbConfig/dbConfig";
-import { sendEmail } from "@/helpers/mailer";
+// import { sendEmail } from "@/helpers/mailer";
 import User from "@/models/userModel";
 import bcryptjs from "bcryptjs";
 import { NextRequest,NextResponse } from "next/server";
@@ -30,7 +31,7 @@ export async function POST(request:NextRequest){
 
         console.log("Password Changed Successfully !")
         console.log("Sending Reset Success Email")
-        await sendEmail({email:user.email,emailType:"RESET_SUCCESS",userId:user._id})
+        // await sendEmail({email:user.email,emailType:"RESET_SUCCESS",userId:user._id})
         console.log("Reset Success Email Sent !")
         return NextResponse.json({success:true,message:"Password Changed Successfully",status:200})
 

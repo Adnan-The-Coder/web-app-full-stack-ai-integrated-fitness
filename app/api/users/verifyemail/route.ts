@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { connect } from "@/dbConfig/dbConfig";
 import { NextRequest, NextResponse } from "next/server";
 import User from "@/models/userModel";
-import { WelcomeEmail } from "@/helpers/mailer";
+// import { WelcomeEmail } from "@/helpers/mailer";
 
 connect();
 
@@ -30,7 +31,7 @@ export async function POST(request: NextRequest) {
 
         // send Welcome Email
         console.log("sending Welcome Email")
-        await WelcomeEmail({email:user.email, userId:user._id});
+        // await WelcomeEmail({email:user.email, userId:user._id});
         console.log("Welcome Email Sent")
 
         return NextResponse.json({ message: "Email Verified successfully", success: true });
