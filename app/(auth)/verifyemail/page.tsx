@@ -6,7 +6,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa"; // Importing React Icons
 import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
 // import { NextResponse } from "next/server";
 
 export default function VerifyEmailPage() {
@@ -15,7 +14,6 @@ export default function VerifyEmailPage() {
     const [verified, setVerified] = useState<boolean>(false);
     const [error, setError] = useState<boolean>(false);
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const router = useRouter();
 
     const handleChange = (index: number, value: string) => {
         const newCode = [...code];
