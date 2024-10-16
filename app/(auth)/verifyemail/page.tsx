@@ -1,12 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import axios from "axios";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { FaCheckCircle, FaExclamationCircle } from "react-icons/fa"; // Importing React Icons
+import { FaCheckCircle } from "react-icons/fa"; // Importing React Icons
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { NextResponse } from "next/server";
+// import { NextResponse } from "next/server";
 
 export default function VerifyEmailPage() {
     const [code, setCode] = useState<string[]>(["", "", "", "", "", ""]);
