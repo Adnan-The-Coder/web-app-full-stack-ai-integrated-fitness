@@ -4,7 +4,7 @@ const userSchema = new mongoose.Schema({
     username: {
         type: String,
         required: [true, "Please Provide a UserName"],
-        unique: true,
+        unique: false,
     },
     email: {
         type: String,
@@ -38,11 +38,11 @@ const userSchema = new mongoose.Schema({
     healthParameters: {
         height: {
             type: Number, // in cm
-            required: true,
+            required: false,
         },
         weight: {
             type: Number, // in kg
-            required: true,
+            required: false,
         },
         bloodPressure: {
             systolic: Number,
@@ -55,11 +55,11 @@ const userSchema = new mongoose.Schema({
     healthRecords: [{
         date: {
             type: Date,
-            required: true,
+            required: false,
         },
         description: {
             type: String, // Description of the health record
-            required: true,
+            required: false,
         },
         doctorName: String, // Optional field for doctor's name
     }],

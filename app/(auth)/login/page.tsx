@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -137,7 +138,7 @@ const Page: React.FC = () => {
         </div>
         <div className="px-8 py-4 bg-gray-900 bg-opacity-50 flex justify-center">
           <p className="text-sm text-gray-400">
-            Don't have an account?{" "}
+            Don`t have an account?{" "}
             <Link href="/SignUp" className="text-green-400 hover:underline">
               Sign up
             </Link>
