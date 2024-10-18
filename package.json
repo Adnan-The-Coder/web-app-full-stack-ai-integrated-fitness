@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "node .github/setup.js"
   },
   "dependencies": {
     "axios": "^1.7.7",
@@ -14,11 +15,12 @@
     "framer-motion": "^11.11.8",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.7.1",
-    "next": "14.2.15",
+    "next": "^14.2.15",
     "react": "^18",
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
-    "react-icons": "^5.3.0"
+    "react-icons": "^5.3.0",
+    "react-router-dom": "^6.27.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
