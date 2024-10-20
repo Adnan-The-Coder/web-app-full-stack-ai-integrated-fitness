@@ -8,15 +8,15 @@ import Image from 'next/image';
 const Hero: React.FC = () => {
   const funFacts = [
     "Your heart is about the size of your fist and weighs as much as a softball.",
-    "The human body contains around 37.2 trillion cells.",
+    "Drinking water can improve energy levels, mood, and cognitive function.",
     "Your brain uses 20% of the total oxygen and blood in your body.",
     "Sweat is odorless; its the bacteria on the skin that causes the smell.",
     "Regular physical activity can improve your mood and reduce feelings of anxiety and depression.",
     "Laughter can increase blood flow by 20%, improving cardiovascular health.",
-    "Your body burns calories even while you sleep.",
+    "Laughter can boost your immune system and lower stress hormones, promoting overall health.",
     "The average adult has 206 bones in their body, but we are born with about 300 bones.",
     "Every day, your heart pumps about 2,000 gallons of blood through your body.",
-    "A single human hair can support up to 100 grams in weight."
+    "A resting heart beats about 60 to 100 times per minute, but can increase to 150 beats per minute."
   ];
 
   const [randomFact, setRandomFact] = useState<string>("");
@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
                 <h1 className='text-sm sm:text-base'>Fun fact:</h1>
               </div>
               <div>
-                  <li className='text-[#767272] text-xs sm:text-sm max-w-xs sm:max-w-sm'>{randomFact}</li> 
+                  <p className='text-[#767272] text-xs sm:text-sm max-w-xs sm:max-w-sm'>{randomFact}</p> 
               </div>
             </div>
           </div>

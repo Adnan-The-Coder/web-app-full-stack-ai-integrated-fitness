@@ -24,7 +24,7 @@ export function Navbar() {
         <div className="hidden md:flex items-center space-x-10">
           <a href="/" className="text-gray-600 hover:text-[#fe4f2a] transition-all">Home</a>
           <a href="#about" className="text-gray-600 hover:text-[#fe4f2a] transition-all">About Us</a>
-          <a href="/services" className="text-gray-600 hover:text-[#fe4f2a] transition-all">Services</a>
+          <a href="#services" className="text-gray-600 hover:text-[#fe4f2a] transition-all">Services</a>
           <a href="/plans" className="text-gray-600 hover:text-[#fe4f2a] transition-all">Plans</a>
         </div>
         <div>
@@ -56,7 +56,7 @@ export function Navbar() {
         <div className="flex flex-col items-start p-5 space-y-4 h-full">
           <Link href="/" className="text-gray-600 hover:text-[#fe4f2a] transition-all text-lg">Home</Link>
           <Link href="#about" className="text-gray-600 hover:text-[#fe4f2a] transition-all text-lg">About Us</Link>
-          <Link href="/services" className="text-gray-600 hover:text-[#fe4f2a] transition-all text-lg">Services</Link>
+          <Link href="#services" className="text-gray-600 hover:text-[#fe4f2a] transition-all text-lg">Services</Link>
           <Link href="/plans" className="text-gray-600 hover:text-[#fe4f2a] transition-all text-lg">Plans</Link>
           <Link href="/signup" className="bg-[#fe4f2a] text-white px-4 py-2 rounded-full transition-all text-md">
             Sign Up
