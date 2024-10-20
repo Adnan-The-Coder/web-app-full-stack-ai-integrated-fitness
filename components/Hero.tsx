@@ -43,10 +43,10 @@ const Hero: React.FC = () => {
             <p className='text-center lg:text-left text-sm sm:text-base'>
               Your fitness journey made smarter,<br /> simpler and more enjoyable
             </p>
-            <div className='bg-[#fe4f2a] rounded-full flex flex-row gap-2 w-28 sm:w-32 p-2 items-center'>
+            <Link href="/" className='bg-[#fe4f2a] rounded-full flex flex-row gap-2 w-28 sm:w-32 p-2 items-center'>
               <img src="https://img.icons8.com/?size=100&id=W9CkRVadJo-2&format=png&color=FFFFFF" alt="" className='w-5 sm:w-7' />
-              <Link href="/" className='text-white text-xs sm:text-sm'>Join now</Link>
-            </div>
+              <p className='text-white text-xs sm:text-sm'>Join now</p>
+            </Link>
 
             <div className='hidden bg-white rounded-3xl p-3 sm:p-5 gap-4 lg:flex flex-col h-[150px]'>
               <div className='flex flex-row items-center gap-2'>

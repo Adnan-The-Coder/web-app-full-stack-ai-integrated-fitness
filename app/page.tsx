@@ -7,6 +7,7 @@ import Hero from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import ExtraServices from '@/components/ExtraServices';
 
 const BackToTop = () => {
   const [visible, setVisible] = useState(false);
@@ -52,6 +53,7 @@ export default function Home() {
       <Banner />
       <About />
       <Services />
+      <ExtraServices/>
       <Footer />
       <BackToTop />
     </>
