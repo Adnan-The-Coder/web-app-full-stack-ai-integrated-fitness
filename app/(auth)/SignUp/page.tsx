@@ -52,7 +52,7 @@ const Page: React.FC = () => {
       
       const login_user = async () => {
         try {
-          const response = await axios.post("/api/users/login", user);
+          const response = await axios.post("/api/users/Login", user);
           console.log(response);
           router.push('/verifyemail');
         } catch (error: any) {
