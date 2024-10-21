@@ -7,7 +7,6 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import { FaUser, FaEnvelope, FaLock, FaSpinner } from "react-icons/fa";
 import PasswordStrengthMeter from "@/components/PasswordStrengthMeter";
-import { Navbar } from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ToastMessage from "@/components/ui/ToastMessage"; 
 
@@ -76,8 +75,20 @@ const Page: React.FC = () => {
 
   return (
     <>
-      <div className="py-8 min-h-screen bg-gradient-to-br from-green-900 via-gray-800 to-green-900 flex items-center justify-center relative overflow-hidden">
-        <Navbar />
+      {/* <div className="py-8 min-h-screen bg-gradient-to-br from-green-900 via-gray-800 to-green-900 flex items-center justify-center relative overflow-hidden"> */}
+      {/* <div className="py-8 min-h-screen bg-gradient-to-br from-orange-800 via-gray-900 to-orange-800 flex items-center justify-center relative overflow-hidden"> */}
+      {/* <div className="py-8 min-h-screen bg-gradient-to-br from-gray-900 via-orange-600 to-yellow-500 flex items-center justify-center relative overflow-hidden"> */}
+      {/* <div className="py-8 min-h-screen bg-gradient-to-br from-gray-800 via-orange-500 to-gray-800 flex items-center justify-center relative overflow-hidden"> */}
+      {/* <div className="py-8 min-h-screen bg-gradient-to-br from-gray-700 via-orange-400 to-gray-700 flex items-center justify-center relative overflow-hidden"> */}
+      {/* <div className="py-8 min-h-screen bg-gradient-to-br from-green-600 via-orange-400 to-green-600 flex items-center justify-center relative overflow-hidden"> */}
+      {/* <div className="py-8 min-h-screen bg-gradient-to-t from-green-600 to-orange-400 flex items-center justify-center relative overflow-hidden"> */}
+      {/* <div className="py-8 min-h-screen bg-gradient-to-r from-green-500 via-yellow-400 to-orange-500 flex items-center justify-center relative overflow-hidden"> */}
+      {/* <div className="py-8 min-h-screen bg-gradient-to-br from-black via-gray-800 to-orange-400 flex items-center justify-center relative overflow-hidden"> */}
+      <div className="py-8 min-h-screen bg-gradient-to-br from-orange-400 via-gray-700 to-black flex items-center justify-center relative overflow-hidden">
+
+
+
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -28,7 +28,7 @@ export function Navbar() {
           <a href="/plans" className="text-gray-600 hover:text-[#fe4f2a] transition-all">Plans</a>
         </div>
         <div>
-          <a href="/signup" className="bg-[#fe4f2a] text-white px-8 py-3 rounded-full hidden md:block transition-all text-sm">
+          <a href="/SignUp" className="bg-[#fe4f2a] text-white px-8 py-3 rounded-full hidden md:block transition-all text-sm">
             Sign Up
           </a>
         </div>
