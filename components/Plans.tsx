@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const Plans = () => {
     return (
-        <div className='h-full w-full flex flex-col items-center justify-center pb-10 pt-20'>
+        <div className='h-full w-full flex flex-col items-center justify-center pb-10 pt-20' id='plans'>
             <div className='text-center flex flex-col gap-5'>
                 <h1 className='text-[#fe4f2a] text-5xl font-medium'>Membership</h1>
                 <p className='text-[#7f7f7f] max-w-sm md:max-w-3xl mx-auto'>With our dedicated resources and community support, we'll guide you step-by-step towards a healthier, happier lifestyle</p>

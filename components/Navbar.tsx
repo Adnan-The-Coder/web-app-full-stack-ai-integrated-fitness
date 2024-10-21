@@ -26,7 +26,7 @@ export function Navbar() {
           <a href="/" className="text-gray-600 hover:text-[#fe4f2a] transition-all">Home</a>
           <a href="#about" className="text-gray-600 hover:text-[#fe4f2a] transition-all">About Us</a>
           <a href="#services" className="text-gray-600 hover:text-[#fe4f2a] transition-all">Services</a>
-          <a href="/plans" className="text-gray-600 hover:text-[#fe4f2a] transition-all">Plans</a>
+          <a href="#plans" className="text-gray-600 hover:text-[#fe4f2a] transition-all">Plans</a>
         </div>
         <div>
           <a href="/SignUp" className="bg-[#fe4f2a] text-white px-8 py-3 rounded-full hidden md:block transition-all text-sm">
@@ -58,7 +58,7 @@ export function Navbar() {
           <Link href="/" className="text-gray-600 hover:text-[#fe4f2a] transition-all text-lg">Home</Link>
           <Link href="#about" className="text-gray-600 hover:text-[#fe4f2a] transition-all text-lg">About Us</Link>
           <Link href="#services" className="text-gray-600 hover:text-[#fe4f2a] transition-all text-lg">Services</Link>
-          <Link href="/plans" className="text-gray-600 hover:text-[#fe4f2a] transition-all text-lg">Plans</Link>
+          <Link href="#plans" className="text-gray-600 hover:text-[#fe4f2a] transition-all text-lg">Plans</Link>
           <Link href="/signup" className="bg-[#fe4f2a] text-white px-4 py-2 rounded-full transition-all text-md">
             Sign Up
           </Link>
