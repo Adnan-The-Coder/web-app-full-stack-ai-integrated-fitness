@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import meal from '../images/meal.png';
 import Image from 'next/image';
+import meal from '../images/meal.png';
+import fitness from '../images/fitness.jpg';
+import virtual from '../images/virtual.jpg';
 
 const ExtraServices: React.FC = () => {
   const [open, setOpen] = useState<number | null>(null);
@@ -31,7 +33,7 @@ const ExtraServices: React.FC = () => {
           <div className="mt-4 flex flex-col md:flex-row gap-4 bg-white rounded-xl p-4 sm:p-6 md:p-10">
             <div className="pr-0 md:pr-4">
               <Image
-                src={meal}
+                src={fitness}
                 alt="Meal Plan"
                 className="w-full md:w-96 max-w-xs mx-auto mb-4 rounded-2xl"
               />
@@ -41,7 +43,7 @@ const ExtraServices: React.FC = () => {
               <p className="text-gray-600 mb-4">
               Our comprehensive Health and Fitness Plan is designed to help you achieve optimal well-being through a balanced approach. It integrates personalized fitness routines, nutrition plans and mental wellness practices. 
               </p>
-              <button className="mt-4 bg-orange-500 text-white px-4 py-2 rounded-lg">
+              <button className="mt-4 bg-[#fe4f2a] text-white px-4 py-2 rounded-lg">
                 Explore
               </button>
             </div>
@@ -80,7 +82,7 @@ const ExtraServices: React.FC = () => {
               <p className="text-gray-600 mb-4">
               Our tailored Meal Plans are designed to meet your unique dietary needs and health goals. Whether you're focused on weight management, muscle building, or simply eating healthier, portion control, and variety.
               </p>
-              <button className="mt-4 bg-orange-500 text-white px-4 py-2 rounded-lg">
+              <button className="mt-4 bg-[#fe4f2a] text-white px-4 py-2 rounded-lg">
                 Explore
               </button>
             </div>
@@ -109,7 +111,7 @@ const ExtraServices: React.FC = () => {
           <div className="mt-4 flex flex-col md:flex-row gap-4 bg-white rounded-xl p-4 sm:p-6 md:p-10">
             <div className="pr-0 md:pr-4">
               <Image
-                src={meal}
+                src={virtual}
                 alt="Meal Plan"
                 className="w-full md:w-96 max-w-xs mx-auto mb-4 rounded-2xl"
               />
@@ -119,7 +121,7 @@ const ExtraServices: React.FC = () => {
               <p className="text-gray-600 mb-4">
               Get expert advice from the comfort of your home with our Virtual Consultations. Our professionals provide personalized guidance on fitness, nutrition, and wellness, tailored to your needs. 
               </p>
-              <button className="mt-4 bg-orange-500 text-white px-4 py-2 rounded-lg">
+              <button className="mt-4 bg-[#fe4f2a] text-white px-4 py-2 rounded-lg">
                 Explore
               </button>
             </div>
