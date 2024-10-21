@@ -1,4 +1,5 @@
 "use client";
+import DashboardContent from '@/components/Dashboard.Content';
 import React, { useState } from 'react';
 import { FaDumbbell, FaUser, FaHeartbeat, FaUtensils, FaComments, FaBook, FaVideo, FaBullhorn, FaChartLine, FaBars, FaTimes } from 'react-icons/fa';
 
@@ -97,6 +98,7 @@ const Profile = () => (
   </section>
 );
 
+
 const Dashboard = () => {
   const [selectedSection, setSelectedSection] = useState('profile');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -108,7 +110,7 @@ const Dashboard = () => {
   const renderContent = () => {
     switch (selectedSection) {
       case 'dashboard':
-        return <div>Dashboard Content</div>;
+        return <div><DashboardContent/></div>;
       case 'profile':
         return <Profile />;
       case 'workout-plan':
