@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 import { FaEnvelope, FaLock, FaSpinner } from "react-icons/fa"; // Importing React Icons
 import ToastMessage from "@/components/ui/ToastMessage"; // Import your ToastMessage component
 import Footer from "@/components/Footer";
-import { Navbar } from "@/components/Navbar";
 
 interface Toast {
   id: number;
@@ -46,7 +45,7 @@ const Page: React.FC = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const response = await axios.post("/api/users/login", user);
+      const response = await axios.post("/api/users/Login", user);
       console.log(response);
       
       // Show success toast
@@ -64,6 +63,7 @@ const Page: React.FC = () => {
       } else if (error.response?.status === 500) {
         addToast("Internal server error. Please try again later.", 'error');
       } else {
+        console.log(error.message);
         addToast("An unexpected error occurred. Please try again.", 'error');
       }
     }
@@ -76,8 +76,8 @@ const Page: React.FC = () => {
 
   return (
     <>
-    <Navbar/>
-    <div className="py-8 min-h-screen bg-gradient-to-br from-emerald-900 via-gray-900 to-emerald-900 flex items-center justify-center relative overflow-hidden">
+    {/* <div className="py-8 min-h-screen bg-gradient-to-br from-emerald-900 via-gray-900 to-emerald-900 flex items-center justify-center relative overflow-hidden"> */}
+    <div className="py-8 min-h-screen bg-gradient-to-br from-orange-400 via-gray-700 to-black flex items-center justify-center relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -90,7 +90,7 @@ const Page: React.FC = () => {
         <div className="p-8 w-full">
           <form onSubmit={onLogin}>
             <div className="mb-4">
-              <label htmlFor="email" className="flex items-center">
+              <label htmlFor="email" className="text-white flex items-center">
                 <FaEnvelope className="mr-2" />
                 Email Address
               </label>
@@ -104,7 +104,7 @@ const Page: React.FC = () => {
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="password" className="flex items-center">
+              <label htmlFor="password" className="text-white flex items-center">
                 <FaLock className="mr-2" />
                 Password
               </label>
