@@ -48,7 +48,7 @@ const Services = () => {
                     ].map((item, index) => (
                     <div key={index} className='bg-white pl-6 pr-6 pt-5 pb-5 rounded-2xl shadow-md flex flex-col gap-4 max-w-sm hover:scale-105 transition-all'>
                         <div className='flex items-center'>
-                        <img src={item.imgSrc} alt="logo" className='w-8'/>
+                        <Image width={30} height={50} src={item.imgSrc} alt="logo" className='w-8'/>
                         <h1 className='text-xl pl-2'>{item.title}</h1>
                         </div>
                         <p className='text-[#7f7f7f] max-w-sm text-md'>{item.description}</p>
