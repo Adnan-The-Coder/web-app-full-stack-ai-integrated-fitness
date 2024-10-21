@@ -8,6 +8,7 @@ import { Navbar } from "@/components/Navbar";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import ExtraServices from '@/components/ExtraServices';
+import Image from 'next/image';
 
 const BackToTop = () => {
   const [visible, setVisible] = useState(false);
@@ -40,7 +41,7 @@ const BackToTop = () => {
       className={`fixed bottom-10 right-10 p-3 bg-[#fe4f2a] text-white rounded-full transition-opacity duration-300 ${visible ? 'opacity-100' : 'opacity-0'}`}
       style={{ display: visible ? 'block' : 'none' }}
     >
-      <img src="https://img.icons8.com/?size=100&id=39805&format=png&color=FFFFFF" alt="" className='w-6' />
+      <Image src="https://img.icons8.com/?size=100&id=39805&format=png&color=FFFFFF" width={30} height={50} alt="" className='w-6' />
     </button>
   );
 };
