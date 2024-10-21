@@ -54,7 +54,7 @@ const Page: React.FC = () => {
       // Wait for 2 seconds before redirecting
       setTimeout(() => {
         setLoading(false); // Ensure loading state is set before redirect
-        router.push('/profile');
+        router.push('/Dashboard');
       }, 2000);
     } catch (error: any) {
       setLoading(false); // Ensure loading is false in case of error
