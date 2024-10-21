@@ -10,6 +10,7 @@ const ExtraServices: React.FC = () => {
 
   return (
     <div className="container mx-auto p-5 sm:p-6 md:p-0 lg:p-20 pb-10">
+      {/* Health and Fitness Plan */}
       <div className="border-t border-b py-4">
         <div
           className="flex justify-between items-center cursor-pointer"
@@ -17,11 +18,16 @@ const ExtraServices: React.FC = () => {
         >
           <h2 className="text-xl sm:text-2xl">Health and Fitness Plan</h2>
           <p className="hidden lg:flex p-3 text-[#7f7f7f]">
-          Holistic program focused on improving physical fitness, balanced nutrition,<br/> mental well-being, and overall health management.
+            Holistic program focused on improving physical fitness, nutrition,<br /> mental well-being, and overall health management.
           </p>
           <span className="text-xl sm:text-2xl">{open === 1 ? '-' : '+'}</span>
         </div>
-        {open === 1 && (
+        <div
+          className={`transition-all overflow-hidden ${
+            open === 1 ? 'max-h-screen' : 'max-h-0'
+          }`}
+          style={{ transitionDuration: '0.5s' }}
+        >
           <div className="mt-4 flex flex-col md:flex-row gap-4 bg-white rounded-xl p-4 sm:p-6 md:p-10">
             <div className="pr-0 md:pr-4">
               <Image
@@ -31,32 +37,36 @@ const ExtraServices: React.FC = () => {
               />
             </div>
             <div>
-              <h1 className="text-xl sm:text-2xl mb-4">Meal Plans</h1>
+              <h1 className="text-xl sm:text-2xl mb-4">Ftiness Plan</h1>
               <p className="text-gray-600 mb-4">
-                Our individual therapy sessions provide a confidential and
-                supportive environment for clients to explore their thoughts,
-                feelings, and behaviors.
+              Our comprehensive Health and Fitness Plan is designed to help you achieve optimal well-being through a balanced approach. It integrates personalized fitness routines, nutrition plans and mental wellness practices. 
               </p>
               <button className="mt-4 bg-orange-500 text-white px-4 py-2 rounded-lg">
                 Explore
               </button>
             </div>
           </div>
-        )}
+        </div>
       </div>
 
+      {/* Efficient Meal Plans */}
       <div className="border-t border-b py-4">
         <div
           className="flex justify-between items-center cursor-pointer"
           onClick={() => toggleOpen(2)}
         >
-          <h2 className="text-xl sm:text-2xl">Effecient Meal Plans</h2>
+          <h2 className="text-xl sm:text-2xl">Efficient Meal Plans</h2>
           <p className="hidden lg:flex p-3 text-[#7f7f7f]">
-          Customized meal plans designed to promote healthy eating,<br/> balanced nutrition, and support personal health goals.
+            Customized meal plans designed to promote healthy eating,<br /> balanced nutrition, and support personal health goals.
           </p>
           <span className="text-xl sm:text-2xl">{open === 2 ? '-' : '+'}</span>
         </div>
-        {open === 2 && (
+        <div
+          className={`transition-all overflow-hidden ${
+            open === 2 ? 'max-h-screen' : 'max-h-0'
+          }`}
+          style={{ transitionDuration: '0.5s' }}
+        >
           <div className="mt-4 flex flex-col md:flex-row gap-4 bg-white rounded-xl p-4 sm:p-6 md:p-10">
             <div className="pr-0 md:pr-4">
               <Image
@@ -68,18 +78,17 @@ const ExtraServices: React.FC = () => {
             <div>
               <h1 className="text-xl sm:text-2xl mb-4">Meal Plans</h1>
               <p className="text-gray-600 mb-4">
-                Our individual therapy sessions provide a confidential and
-                supportive environment for clients to explore their thoughts,
-                feelings, and behaviors.
+              Our tailored Meal Plans are designed to meet your unique dietary needs and health goals. Whether you're focused on weight management, muscle building, or simply eating healthier, portion control, and variety.
               </p>
               <button className="mt-4 bg-orange-500 text-white px-4 py-2 rounded-lg">
                 Explore
               </button>
             </div>
           </div>
-        )}
+        </div>
       </div>
 
+      {/* Virtual Consultations */}
       <div className="border-t border-b py-4">
         <div
           className="flex justify-between items-center cursor-pointer"
@@ -87,11 +96,16 @@ const ExtraServices: React.FC = () => {
         >
           <h2 className="text-xl sm:text-2xl">Virtual Consultations</h2>
           <p className="hidden lg:flex p-3 text-[#7f7f7f]">
-          Convenient online consultations providing expert advice,<br/> personalized care, and support for health and wellness needs.
+            Convenient online consultations providing expert advice,<br /> personalized care, and support for health and wellness needs.
           </p>
           <span className="text-xl sm:text-2xl">{open === 3 ? '-' : '+'}</span>
         </div>
-        {open === 3 && (
+        <div
+          className={`transition-all overflow-hidden ${
+            open === 3 ? 'max-h-screen' : 'max-h-0'
+          }`}
+          style={{ transitionDuration: '0.5s' }}
+        >
           <div className="mt-4 flex flex-col md:flex-row gap-4 bg-white rounded-xl p-4 sm:p-6 md:p-10">
             <div className="pr-0 md:pr-4">
               <Image
@@ -101,18 +115,16 @@ const ExtraServices: React.FC = () => {
               />
             </div>
             <div>
-              <h1 className="text-xl sm:text-2xl mb-4">Meal Plans</h1>
+              <h1 className="text-xl sm:text-2xl mb-4">Virtual Consultations</h1>
               <p className="text-gray-600 mb-4">
-                Our individual therapy sessions provide a confidential and
-                supportive environment for clients to explore their thoughts,
-                feelings, and behaviors.
+              Get expert advice from the comfort of your home with our Virtual Consultations. Our professionals provide personalized guidance on fitness, nutrition, and wellness, tailored to your needs. 
               </p>
               <button className="mt-4 bg-orange-500 text-white px-4 py-2 rounded-lg">
                 Explore
               </button>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
