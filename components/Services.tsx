@@ -18,7 +18,7 @@ const Services = () => {
                 />
                 </div>
                 <div>
-                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pb-20 pl-10 lg:pb-0'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pb-20 pl-0 lg:pl-10 lg:pb-0'>
                     {[
                     {
                         title: 'Health Assistant',

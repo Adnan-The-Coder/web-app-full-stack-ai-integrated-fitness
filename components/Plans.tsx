@@ -13,7 +13,7 @@ const Plans = () => {
                 <div className='p-10 h-[460px] bg-[#ffffff] rounded-xl flex flex-col gap-4 hover:translate-y-[-5px] transition-all'>
                     <h3 className='text-[#7f7f7f] text-sm'>Basic</h3>
                     <div className='flex flex-row items-center'>
-                        <h1 className='text-5xl text-red-950'>₹10</h1>
+                        <h1 className='text-5xl text-red-950'>₹100</h1>
                         <h3 className=' text-red-950'>/month</h3>
                     </div>
                     <h1 className='text-[#fe4f2a]'>Basic Package</h1>
@@ -38,7 +38,7 @@ const Plans = () => {
                 <div className='p-10 h-full bg-[#ffffff] rounded-xl flex flex-col gap-4 hover:translate-y-[-5px] transition-all'>
                     <h3 className='text-[#7f7f7f] text-sm'>Essential Care</h3>
                     <div className='flex flex-row items-center'>
-                        <h1 className='text-5xl text-red-950'>₹300</h1>
+                        <h1 className='text-5xl text-red-950'>₹500</h1>
                         <h3 className=' text-red-950'>/6month</h3>
                     </div>
                     <h1 className='text-[#fe4f2a]'>Essential Care Package</h1>
@@ -71,7 +71,7 @@ const Plans = () => {
                 <div className='p-10 h-[460px] bg-[#ffffff] rounded-xl flex flex-col gap-4 hover:translate-y-[-5px] transition-all'>
                     <h3 className='text-[#7f7f7f] text-sm'>Premium</h3>
                     <div className='flex flex-row items-center'>
-                        <h1 className='text-5xl text-red-950'>₹500</h1>
+                        <h1 className='text-5xl text-red-950'>₹1,000</h1>
                         <h3 className=' text-red-950'>/Year</h3>
                     </div>
                     <h1 className='text-[#fe4f2a]'>Premium Support Package</h1>
