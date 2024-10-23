@@ -1,7 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import DashboardContent from '@/components/Dashboard.Content';
+// import DashboardContent from '@/components/Dashboard.Content';
+import axios from 'axios';
+import { NextResponse } from 'next/server';
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
 import { FaDumbbell, FaUser, FaHeartbeat, FaUtensils, FaComments, FaBook, FaVideo, FaBullhorn, FaChartLine, FaBars, FaTimes } from 'react-icons/fa';
+import DashboardContent from '@/components/DashboardContents/Dashboard.Content';
+import Profile_content from '@/components/DashboardContents/Profile';
 
 interface SidebarProps {
   setSelectedSection: (section: string) => void;
@@ -9,11 +16,25 @@ interface SidebarProps {
   toggleMenu: () => void;
 }
 
+
 const Sidebar: React.FC<SidebarProps> = ({ setSelectedSection, isOpen, toggleMenu }) => {
+  const router = useRouter();
   const handleSectionChange = (section: string) => {
     setSelectedSection(section);
     if (isOpen) toggleMenu(); // Close the menu if it's open
   };
+
+    const logout = async () => {
+      try {
+          await axios.get('/api/users/logout');
+          toast.success("Logout Successful");
+          router.push('/login');
+      } catch (error: unknown) {
+          console.error(error);
+          toast.error("Logout failed");
+      }
+    };
+
   return (
     <aside className={`fixed h-screen inset-0 bg-gray-100 p-5 flex flex-col transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} z-50 md:static md:translate-x-0 md:w-64`}>
       <div className="flex justify-between items-center mb-8">
@@ -73,7 +94,7 @@ const Sidebar: React.FC<SidebarProps> = ({ setSelectedSection, isOpen, toggleMen
       </nav>
       <div className="mt-6 space-y-3"> {/* Added mt-6 for spacing */}
         <button className="bg-orange-500 text-white py-2 px-4 w-full rounded">Settings</button>
-        <button className="bg-orange-500 text-white py-2 px-4 w-full rounded">Log Out</button>
+        <button className="bg-orange-500 text-white py-2 px-4 w-full rounded" onClick={logout}>Log Out</button>
       </div>
     </aside>
   );
@@ -112,7 +133,7 @@ const Dashboard = () => {
       case 'dashboard':
         return <div><DashboardContent/></div>;
       case 'profile':
-        return <Profile />;
+        return <Profile_content/>;
       case 'workout-plan':
         return <div>Workout Plan Content</div>;
       case 'health-assistant':
