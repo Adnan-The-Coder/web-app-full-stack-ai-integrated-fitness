@@ -74,20 +74,20 @@ const Page: React.FC = () => {
 
   return (
     <>
-      <div className="py-8 min-h-screen bg-gradient-to-br from-green-900 via-gray-800 to-green-900 flex items-center justify-center relative overflow-hidden">
+      <div className="py-8 min-h-screen bg-[#d8d8d9] flex items-center justify-center relative overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="max-w-md w-full bg-white bg-opacity-10 backdrop-filter backdrop-blur-xl rounded-2xl shadow-xl overflow-hidden flex flex-col items-center justify-center p-6"
+          className="max-w-md w-full bg-[#fff4f0] bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-2xl shadow-xl overflow-hidden flex flex-col items-center justify-center p-6"
         >
-          <h2 className="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-green-400 to-yellow-500 text-transparent bg-clip-text">
+          <h2 className="text-3xl font-bold mb-6 text-center text-[#FE4F2A]">
             Create Your Account
           </h2>
           <div className="w-full">
             <form onSubmit={(e) => { e.preventDefault(); onSignup(); }}>
               <div className="mb-4">
-                <label htmlFor="username" className="flex items-center text-gray-200">
+                <label htmlFor="username" className="flex items-center text-[#2d2a2a]">
                   <FaUser className="mr-2" />
                   Username
                 </label>
@@ -101,7 +101,7 @@ const Page: React.FC = () => {
                 />
               </div>
               <div className="mb-4">
-                <label htmlFor="email" className="flex items-center text-gray-200">
+                <label htmlFor="email" className="flex items-center text-[#2d2a2a]">
                   <FaEnvelope className="mr-2" />
                   Email
                 </label>
@@ -115,7 +115,7 @@ const Page: React.FC = () => {
                 />
               </div>
               <div className="mb-4">
-                <label htmlFor="password" className="flex items-center text-gray-200">
+                <label htmlFor="password" className="flex items-center text-[#2d2a2a]">
                   <FaLock className="mr-2" />
                   Password
                 </label>
@@ -130,8 +130,8 @@ const Page: React.FC = () => {
                 <PasswordStrengthMeter password={user.password} />
               </div>
               <motion.button
-                className={`w-full py-3 mt-5 bg-gradient-to-r from-green-500 to-yellow-500 text-white font-bold rounded-lg shadow-lg 
-                  hover:from-green-600 hover:to-yellow-600 focus:outline-none 
+                className={`w-full py-3 mt-5 bg-gradient-to-r from-[#fe8c00] to-[#f83600] text-white font-bold rounded-lg shadow-lg 
+                  hover:from-[#f83600] hover:to-[#fe8c00] focus:outline-none 
                   focus:ring-2 focus:ring-green-500 focus:ring-offset-2 
                   transition duration-200 ${buttonDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
                 onClick={onSignup}
@@ -144,15 +144,15 @@ const Page: React.FC = () => {
             </form>
             <div className="mt-4 text-sm text-gray-400 text-center">
               By signing up, you agree to our{" "}
-              <Link href="/Terms-And-Conditions" target="_blanck" className="text-green-400 hover:underline">
+              <Link href="/Terms-And-Conditions" target="_blanck" className="text-[#fe4f2a] hover:underline">
                 terms and conditions
               </Link>.
             </div>
           </div>
-          <div className="px-8 py-4 bg-gray-900 bg-opacity-50 flex justify-center">
+          <div className="px-8 py-4 bg-[#ececec] bg-opacity-50 rounded-xl mt-4 flex justify-center">
             <p className="text-sm text-gray-400">
               Already have an account?{" "}
-              <Link href={'/login'} className='text-green-400 hover:underline'>
+              <Link href={'/login'} className='text-[#fe4f2a] hover:underline'>
                 Login
               </Link>
             </p>

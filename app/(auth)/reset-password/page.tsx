@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { FaLock, FaSpinner, FaCheckCircle, FaExclamationCircle } from "react-icons/fa";
 import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import ToastMessage from "@/components/ui/ToastMessage";
 
 interface Toast {
@@ -75,15 +74,15 @@ const ResetPasswordPage = () => {
 
     return (
         <>
-            <div className="py-8 min-h-screen bg-gradient-to-br from-emerald-900 via-gray-900 to-emerald-900 flex items-center justify-center relative overflow-hidden">
-                <Navbar />
+            <Navbar />
+            <div className="py-8 min-h-screen bg-[#d9d9d9] flex items-center justify-center relative overflow-hidden">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="max-w-md w-full bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-2xl shadow-xl overflow-hidden flex flex-col items-center justify-center py-2"
+                    className="max-w-md w-full bg-[#fff4f0] bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-2xl shadow-xl overflow-hidden flex flex-col items-center justify-center py-2"
                 >
-                    <h2 className="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-green-400 to-emerald-500 text-transparent bg-clip-text">
+                    <h2 className="text-3xl font-bold mb-6 mt-10 text-center text-[#fe4f2a]">
                         Create New Password
                     </h2>
                     <div className="p-8 w-full">
@@ -119,9 +118,9 @@ const ResetPasswordPage = () => {
                                 />
                             </div>
                             <motion.button
-                                className={`w-full py-3 mt-5 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-lg shadow-lg 
-                                    hover:from-green-600 hover:to-emerald-700 focus:outline-none 
-                                    focus:ring-2 focus:ring-green-500 focus:ring-offset-2 
+                                className={`w-full py-3 mt-5 bg-gradient-to-r from-[#fe8c00] to-[#f83600] text-white font-bold rounded-lg shadow-lg 
+                                        hover:from-[#f83600] hover:to-[#fe8c00] focus:outline-none 
+                                        focus:ring-2 focus:ring-green-500 focus:ring-offset-2 
                                     focus:ring-offset-gray-900 transition duration-200 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
                                 onClick={resetPassword}
                                 disabled={loading}
@@ -147,7 +146,6 @@ const ResetPasswordPage = () => {
                     )}
                 </motion.div>
             </div>
-            <Footer />
             <div className="absolute top-0 right-0 p-4">
                 {toasts.map((toast) => (
                     <ToastMessage key={toast.id} message={toast.message} type={toast.type} onClose={() => removeToast(toast.id)} />

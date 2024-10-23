@@ -8,7 +8,6 @@ import ToastMessage from "@/components/ui/ToastMessage";
 import { NextResponse } from "next/server";
 import axios from "axios";
 import { Navbar } from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 interface Toast {
     id: number;
@@ -93,20 +92,20 @@ const ForgotPasswordPage = () => {
     return (
         <>
             <Navbar />
-            <div className="py-8 min-h-screen bg-gradient-to-br from-emerald-900 via-gray-900 to-emerald-900 flex items-center justify-center relative overflow-hidden">
+            <div className="py-8 min-h-screen bg-[#d8d8d9] flex items-center justify-center relative overflow-hidden">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="max-w-md w-full bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-2xl shadow-xl overflow-hidden flex flex-col items-center justify-center min-h-[60vh] py-2"
+                    className="max-w-md w-full bg-[#fff4f0] bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-2xl shadow-xl overflow-hidden flex flex-col items-center justify-center min-h-[60vh] py-2"
                 >
-                    <h2 className="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-green-400 to-emerald-500 text-transparent bg-clip-text">
+                    <h2 className="text-3xl font-bold mb-6 text-center text-[#fe4f2a]">
                         Reset Password
                     </h2>
                     <div className="p-8 w-full">
                         <form onSubmit={forgot_Passwrd}>
                             <div className="mb-4">
-                                <label htmlFor="email" className="flex items-center">
+                                <label htmlFor="email" className="flex items-center mb-3">
                                     <FaEnvelope className="mr-2" />
                                     Enter your Email Address
                                 </label>
@@ -122,8 +121,8 @@ const ForgotPasswordPage = () => {
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                className={`w-full py-3 px-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-lg shadow-lg 
-                                  hover:from-green-600 hover:to-emerald-700 focus:outline-none 
+                                className={`w-full py-3 px-4 bg-gradient-to-r from-[#fe8c00] to-[#f83600] text-white font-bold rounded-lg shadow-lg 
+                                        hover:from-[#f83600] hover:to-[#fe8c00] focus:outline-none 
                                   focus:ring-2 focus:ring-green-500 focus:ring-offset-2 
                                   focus:ring-offset-gray-900 transition duration-200 ${buttonDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
                                 type="submit"
@@ -138,10 +137,10 @@ const ForgotPasswordPage = () => {
                             )}
                         </form>
                     </div>
-                    <div className="px-8 py-4 bg-gray-900 bg-opacity-50 flex justify-center">
+                    <div className="px-8 py-4 bg-[#fff4f0] bg-opacity-70 rounded-xl flex justify-center">
                         <p className="text-sm text-gray-400">
                             Don't have an account?{" "}
-                            <Link href="/SignUp" className="text-green-400 hover:underline">
+                            <Link href="/SignUp" className="text-[#fe4f2a] hover:underline">
                                 Sign up
                             </Link>
                         </p>
@@ -153,7 +152,6 @@ const ForgotPasswordPage = () => {
                     ))}
                 </div>
             </div>
-            <Footer />
         </>
     );
 };

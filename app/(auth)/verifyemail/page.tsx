@@ -74,18 +74,18 @@ export default function VerifyEmailPage() {
     }, [code]);
 
     return (
-      <div className="py-8 min-h-screen bg-gradient-to-br from-emerald-900 via-gray-900 to-emerald-900 flex items-center justify-center relative overflow-hidden">
+      <div className="py-8 min-h-screen bg-[#d9d9d9] flex items-center justify-center relative overflow-hidden">
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
             <motion.div
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className='max-w-md w-full bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-2xl shadow-xl p-8'
+                className='max-w-md w-full bg-[#fff4f0] bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-2xl shadow-xl p-8'
             >
-                <h1 className="text-4xl font-bold text-center bg-gradient-to-r from-green-400 to-emerald-500 text-transparent bg-clip-text">
+                <h1 className="text-4xl font-bold text-center text-[#ff4e2a]">
                     Verify Email
                 </h1>
-                <p className="text-center text-gray-300 mb-6">Enter the 6-digit code sent to your email address.</p>
+                <p className="text-center text-gray-500 mb-6 mt-5">Enter the 6-digit code sent to your email address.</p>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="flex justify-between">
@@ -98,7 +98,7 @@ export default function VerifyEmailPage() {
                                 value={digit}
                                 onChange={(e) => handleChange(index, e.target.value)}
                                 onKeyDown={(e) => handleKeyDown(index, e)}
-                                className="w-12 h-12 text-center text-2xl font-bold bg-gray-700 text-white border-2 border-gray-600 rounded-lg focus:border-green-500 focus:outline-none"
+                                className="w-12 h-12 text-center text-2xl font-bold bg-[#d8d8d9] text-black border-2 border-[#0000005f] rounded-lg focus:border-green-500 focus:outline-none"
                             />
                         ))}
                     </div>
@@ -108,7 +108,7 @@ export default function VerifyEmailPage() {
                         whileTap={{ scale: 0.95 }}
                         type="submit"
                         disabled={isLoading || code.some((digit) => !digit)}
-                        className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 disabled:opacity-50"
+                        className="w-full bg-gradient-to-r from-[#fe8c00] to-[#f83600] text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:from-[#f83600] hover:to-[#fe8c00] focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 disabled:opacity-50"
                     >
                         {isLoading ? "Verifying..." : "Verify Email"}
                     </motion.button>

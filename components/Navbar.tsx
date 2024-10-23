@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
+import shakti from '../images/shakti.png'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,10 +16,9 @@ export function Navbar() {
     <nav className="bg-[#d9d9d9] p-3 relative">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <Image width={40} height={60}
-            src="https://img.icons8.com/?size=100&id=57197&format=png&color=000000"
+          <Image width={45} height={45}
+            src={shakti}
             alt="Shakti.io Logo"
-            className="w-7 h-7"
           />
           <Link href="/" className="text-[#fe4f2a] text-2xl font-semibold">Shakti.io</Link>
         </div>
