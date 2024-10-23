@@ -7,8 +7,6 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import { FaUser, FaEnvelope, FaLock, FaSpinner } from "react-icons/fa";
 import PasswordStrengthMeter from "@/components/PasswordStrengthMeter";
-import { Navbar } from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import ToastMessage from "@/components/ui/ToastMessage"; 
 
 interface Toast {
@@ -161,7 +159,6 @@ const Page: React.FC = () => {
           </div>
         </motion.div>
       </div>
-      <Footer />
       <div className="absolute top-0 right-0 p-4">
         {toasts.map((toast) => (
           <ToastMessage key={toast.id} message={toast.message} type={toast.type} onClose={() => removeToast(toast.id)} />

@@ -7,7 +7,6 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaLock, FaSpinner } from "react-icons/fa"; // Importing React Icons
 import ToastMessage from "@/components/ui/ToastMessage"; // Import your ToastMessage component
-import Footer from "@/components/Footer";
 
 interface Toast {
   id: number;
@@ -151,7 +150,6 @@ const Page: React.FC = () => {
         ))}
       </div>
     </div>
-    <Footer/>
   </>
   );
 };
