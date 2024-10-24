@@ -1,93 +1,148 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const DashboardContent = () => (
-  <section className="p-6">
-    {/* Date Indicator and Search Bar */}
-    <div className="flex justify-between items-center mb-4">
-      <div className="text-xl font-bold">20th Daily Last 7 Days</div>
-      <input
-        type="text"
-        placeholder="Search..."
-        className="border p-2 rounded"
-      />
-    </div>
+const DashboardContent = () => {
+  const [activeTab, setActiveTab] = useState('Exercise');
 
-    {/* Tabs for Alerts, Goals, Filters */}
-    <div className="mb-4">
-      <ul className="flex space-x-4">
-        <li className="cursor-pointer">Alerts</li>
-        <li className="cursor-pointer">Goals</li>
-        <li className="cursor-pointer">Filters</li>
-      </ul>
-    </div>
-
-    {/* Main Statistics Section */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {/* Exercise Time */}
-      <div className="bg-white p-5 rounded-lg shadow">
-        <h3 className="text-xl">Exercise Time</h3>
-        <p className="text-3xl font-bold">2 hrs 30 min</p>
-        {/* Example Bar Chart Placeholder */}
-        <div className="bg-gray-200 h-2 w-full mt-2 rounded">
-          <div className="bg-blue-600 h-2 w-3/4 rounded"></div>
-        </div>
-        <span className="text-gray-500">Badminton Exercise</span>
+  return (
+    <section className="p-6 bg-gray-50 min-h-screen">
+      {/* Date Indicator and Search Bar */}
+      <div className="flex justify-between items-center mb-8">
+        <div className="text-xl font-bold text-gray-800">Daily Last 8 Days</div>
+        <input
+          type="text"
+          placeholder="Search something..."
+          className="border border-gray-300 p-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+        />
       </div>
 
-      {/* Activity Types */}
-      <div className="bg-white p-5 rounded-lg shadow">
-        <h3 className="text-xl">Activity Types</h3>
-        <ul>
-          <li className="font-bold text-blue-600">Badminton</li>
-          <li>Jogging</li>
-          <li>Body Building</li>
-          <li>Swimming</li>
+      {/* Tabs for Exercise and Daily Habit */}
+      <div className="mb-8">
+        <ul className="flex space-x-4 text-gray-500 text-sm">
+          <li 
+            className={`cursor-pointer ${activeTab === 'Exercise' ? 'border-b-4 border-purple-500 text-purple-500 font-semibold' : ''}`} 
+            onClick={() => setActiveTab('Exercise')}
+          >
+            Exercise
+          </li>
+          <li 
+            className={`cursor-pointer ${activeTab === 'Daily Habit' ? 'border-b-4 border-purple-500 text-purple-500 font-semibold' : ''}`} 
+            onClick={() => setActiveTab('Daily Habit')}
+          >
+            Daily Habit
+          </li>
         </ul>
-        <div className="bg-gray-200 h-2 w-full mt-2 rounded">
-          <div className="bg-green-600 h-2 w-3/5 rounded"></div>
-        </div>
-        <span className="text-gray-500">Progress: 60%</span>
       </div>
 
-      {/* Steps */}
-      <div className="bg-white p-5 rounded-lg shadow text-center">
-        <h3 className="text-xl">Steps</h3>
-        <p className="text-3xl font-bold">1,250</p>
+      {/* Main Statistics Section */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {activeTab === 'Exercise' && (
+          <>
+            {/* Exercise Time */}
+            <div className="bg-white p-5 rounded-lg shadow-lg">
+              <h3 className="text-xl text-gray-700 font-semibold">Exercise Time</h3>
+              <p className="text-3xl font-bold text-red-500 mt-4">2 hrs 30 min</p>
+              {/* Example Bar Chart */}
+              <div className="mt-4">
+                <div className="h-32 flex space-x-1">
+                  <div className="bg-gray-200 w-1/6 h-full"></div>
+                  <div className="bg-gray-200 w-1/6 h-3/5"></div>
+                  <div className="bg-gray-200 w-1/6 h-4/5"></div>
+                  <div className="bg-red-400 w-1/6 h-full"></div>
+                  <div className="bg-gray-200 w-1/6 h-2/4"></div>
+                  <div className="bg-gray-200 w-1/6 h-3/4"></div>
+                </div>
+              </div>
+              <span className="text-gray-400 block mt-4">Weekly</span>
+            </div>
+
+            {/* Running Info */}
+            <div className="bg-white p-5 rounded-lg shadow-lg relative flex flex-col justify-between">
+              <div>
+                <h3 className="text-sm text-gray-500 mb-2">Run at Lapang Cicooreog</h3>
+                <p className="text-gray-500 text-xs mb-4">20 July 2023</p>
+                <div className="flex justify-between text-center text-gray-600 mb-4">
+                  <div>
+                    <p className="font-bold text-lg">256</p>
+                    <p className="text-xs">Calories</p>
+                  </div>
+                  <div>
+                    <p className="font-bold text-lg">65</p>
+                    <p className="text-xs">Heart Rate</p>
+                  </div>
+                  <div>
+                    <p className="font-bold text-lg">1,054</p>
+                    <p className="text-xs">Steps</p>
+                  </div>
+                </div>
+              </div>
+              <div className="text-center text-orange-500">
+                <p className="text-xs">Time: 03:20:12</p>
+                <p className="text-xs">20 KM</p>
+              </div>
+            </div>
+
+            {/* Real Time Monitoring */}
+            <div className="bg-white p-5 rounded-lg shadow-lg text-center">
+              <h3 className="text-xl text-gray-700 font-semibold">Real Time Monitoring</h3>
+              <p className="text-3xl font-bold text-red-500 mt-4">Off</p>
+            </div>
+
+            {/* Calories Burned */}
+            <div className="bg-white p-5 rounded-lg shadow-lg text-center">
+              <h3 className="text-xl text-gray-700 font-semibold">Calories Burned</h3>
+              <p className="text-3xl font-bold text-purple-500 mt-4">20%</p>
+            </div>
+          </>
+        )}
+
+        {activeTab === 'Daily Habit' && (
+          <>
+            {/* Home Workouts */}
+            <div className="bg-white p-5 rounded-lg shadow-lg">
+              <h3 className="text-xl text-gray-700 font-semibold">Home Workouts</h3>
+              <ul className="mt-4 space-y-4">
+                <li className="flex justify-between items-center">
+                  <p>Plank</p>
+                  <span className="text-gray-400">30 Minutes</span>
+                </li>
+                <li className="flex justify-between items-center">
+                  <p>Squats</p>
+                  <span className="text-gray-400">20x</span>
+                </li>
+                <li className="flex justify-between items-center">
+                  <p>Push Ups</p>
+                  <span className="text-gray-400">10x</span>
+                </li>
+                <li className="flex justify-between items-center">
+                  <p>Sit Ups</p>
+                  <span className="text-gray-400">40x</span>
+                </li>
+                <li className="flex justify-between items-center">
+                  <p>Jumping</p>
+                  <span className="text-gray-400">40x</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Popular Classes */}
+            <div className="bg-white p-5 rounded-lg shadow-lg">
+              <h3 className="text-xl text-gray-700 font-semibold">Popular Classes</h3>
+              <div className="flex items-center mt-4">
+                <div className="w-16 h-16 bg-yellow-200 rounded-full flex justify-center items-center">
+                  {/* Placeholder for Icon */}
+                  <span className="text-2xl">🚴‍♀️</span>
+                </div>
+                <div className="ml-4">
+                  <h4 className="text-lg font-bold text-gray-700">Cycling Sport</h4>
+                  <p className="text-gray-500 text-sm">Cycling helps burn calories and increases metabolism.</p>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
       </div>
-
-      {/* Calories Burned */}
-      <div className="bg-white p-5 rounded-lg shadow text-center">
-        <h3 className="text-xl">Calories Burned</h3>
-        <p className="text-3xl font-bold">20%</p>
-      </div>
-
-      {/* Heart Rate */}
-      <div className="bg-white p-5 rounded-lg shadow text-center">
-        <h3 className="text-xl">Heart Rate</h3>
-        <p className="text-3xl font-bold">90 bpm</p>
-      </div>
-
-      {/* Blood Pressure */}
-      <div className="bg-white p-5 rounded-lg shadow text-center">
-        <h3 className="text-xl">Blood Pressure</h3>
-        <p className="text-3xl font-bold">105/90</p>
-      </div>
-    </div>
-
-    {/* Right-Side Panel */}
-    <div className="mt-6">
-      <h3 className="text-xl font-bold">Sleep Periodic</h3>
-      {/* Example Sleep Graph Placeholder */}
-      <div className="bg-gray-200 h-40 rounded mt-2"></div>
-      <p className="text-red-500">Sleep Irregularity Detected!</p>
-
-      <h3 className="text-xl font-bold mt-4">AI Suggestions</h3>
-      <p>Pillow Improvement: Consider changing your pillows for better sleep quality.</p>
-
-      <h3 className="text-xl font-bold mt-4">Consultations</h3>
-      <p>Scheduled Consultation: 21 Nov, Monday 08am - 09am</p>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default DashboardContent;
