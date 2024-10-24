@@ -103,50 +103,95 @@ const ProfileContent = () => {
                 </div>
             </div>
 
-            {isEditing && (
-                <div className="mt-6">
-                    <h4 className="text-lg font-semibold mb-2">Edit Profile Information</h4>
-                    <div className="flex flex-col">
-                        <input
-                            type="text"
-                            placeholder="Username"
-                            value={formData?.username || ''}
-                            onChange={(e) => handleChange(e, 'username')}
-                            className="mb-2 p-2 border rounded"
-                        />
-                        <input
-                            type="email"
-                            placeholder="Email"
-                            value={formData?.email || ''}
-                            onChange={(e) => handleChange(e, 'email')}
-                            className="mb-2 p-2 border rounded"
-                        />
-                        <input
-                            type="number"
-                            placeholder="Height (cm)"
-                            value={formData?.healthParameters?.height || ''}
-                            onChange={(e) => handleChange(e, 'healthParameters.height')}
-                            className="mb-2 p-2 border rounded"
-                        />
-                        <input
-                            type="number"
-                            placeholder="Weight (kg)"
-                            value={formData?.healthParameters?.weight || ''}
-                            onChange={(e) => handleChange(e, 'healthParameters.weight')}
-                            className="mb-2 p-2 border rounded"
-                        />
-                        <textarea
-                            placeholder="Dietary Preferences (comma separated)"
-                            value={formData?.dietaryPreferences.join(", ") || ''}
-                            onChange={(e) => handleChange(e, 'dietaryPreferences')}
-                            className="mb-2 p-2 border rounded"
-                        />
-                        <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded" onClick={handleSave}>
-                            Save Changes
+            <div className="mt-6">
+                <h4 className="text-lg font-semibold mb-2">Profile Information</h4>
+                <div className="flex flex-col space-y-4">
+                    <div className="flex justify-between items-center">
+                        <span className="font-medium">Username:</span>
+                        {isEditing ? (
+                            <input
+                                type="text"
+                                value={formData?.username || ''}
+                                onChange={(e) => handleChange(e, 'username')}
+                                className="p-2 border rounded w-2/3"
+                            />
+                        ) : (
+                            <span>{data?.username}</span>
+                        )}
+                        <button onClick={isEditing ? handleSave : handleEditToggle} className="ml-2 text-blue-500">
+                            <i className="fas fa-edit"></i>
+                        </button>
+                    </div>
+
+                    <div className="flex justify-between items-center">
+                        <span className="font-medium">Email:</span>
+                        {isEditing ? (
+                            <input
+                                type="email"
+                                value={formData?.email || ''}
+                                onChange={(e) => handleChange(e, 'email')}
+                                className="p-2 border rounded w-2/3"
+                            />
+                        ) : (
+                            <span>{data?.email}</span>
+                        )}
+                        <button onClick={isEditing ? handleSave : handleEditToggle} className="ml-2 text-blue-500">
+                            <i className="fas fa-edit"></i>
+                        </button>
+                    </div>
+
+                    <div className="flex justify-between items-center">
+                        <span className="font-medium">Height (cm):</span>
+                        {isEditing ? (
+                            <input
+                                type="number"
+                                value={formData?.healthParameters?.height || ''}
+                                onChange={(e) => handleChange(e, 'healthParameters.height')}
+                                className="p-2 border rounded w-2/3"
+                            />
+                        ) : (
+                            <span>{data?.healthParameters?.height}</span>
+                        )}
+                        <button onClick={isEditing ? handleSave : handleEditToggle} className="ml-2 text-blue-500">
+                            <i className="fas fa-edit"></i>
+                        </button>
+                    </div>
+
+                    <div className="flex justify-between items-center">
+                        <span className="font-medium">Weight (kg):</span>
+                        {isEditing ? (
+                            <input
+                                type="number"
+                                value={formData?.healthParameters?.weight || ''}
+                                onChange={(e) => handleChange(e, 'healthParameters.weight')}
+                                className="p-2 border rounded w-2/3"
+                            />
+                        ) : (
+                            <span>{data?.healthParameters?.weight}</span>
+                        )}
+                        <button onClick={isEditing ? handleSave : handleEditToggle} className="ml-2 text-blue-500">
+                            <i className="fas fa-edit"></i>
+                        </button>
+                    </div>
+
+                    <div className="flex justify-between items-center">
+                        <span className="font-medium">Dietary Preferences:</span>
+                        {isEditing ? (
+                            <textarea
+                                value={formData?.dietaryPreferences.join(", ") || ''}
+                                onChange={(e) => handleChange(e, 'dietaryPreferences')}
+                                className="p-2 border rounded w-2/3"
+                                rows={2}
+                            />
+                        ) : (
+                            <span>{data?.dietaryPreferences.join(", ")}</span>
+                        )}
+                        <button onClick={isEditing ? handleSave : handleEditToggle} className="ml-2 text-blue-500">
+                            <i className="fas fa-edit"></i>
                         </button>
                     </div>
                 </div>
-            )}
+            </div>
         </section>
     );
 };
