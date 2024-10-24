@@ -12,7 +12,7 @@ const footerVariants = {
 
 const Footer = () => {
   return (
-    <footer className="relative overflow-hidden bg-[#d9d9d958]">
+    <footer className="relative overflow-hidden bg-[#d9d9d94e]">
       <div
         className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-r from-yellow-500 to-green-600 -z-10"
       />
