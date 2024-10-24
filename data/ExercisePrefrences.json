@@ -1,0 +1,89 @@
+{
+    "recommendations": [
+      {
+        "ageRange": "13-17",
+        "weightRange": "30-150",
+        "heightRange": "110-230",
+        "gender": "male",
+        "exerciseTime": "30 minutes of moderate to vigorous exercise."
+      },
+      {
+        "ageRange": "13-17",
+        "weightRange": "30-150",
+        "heightRange": "110-230",
+        "gender": "female",
+        "exerciseTime": "30 minutes of moderate to vigorous exercise."
+      },
+      {
+        "ageRange": "18-29",
+        "weightRange": "30-150",
+        "heightRange": "110-230",
+        "gender": "male",
+        "exerciseTime": "45 minutes of moderate to vigorous exercise."
+      },
+      {
+        "ageRange": "18-29",
+        "weightRange": "30-150",
+        "heightRange": "110-230",
+        "gender": "female",
+        "exerciseTime": "45 minutes of moderate to vigorous exercise."
+      },
+      {
+        "ageRange": "30-49",
+        "weightRange": "30-150",
+        "heightRange": "110-230",
+        "gender": "male",
+        "exerciseTime": "60 minutes of moderate exercise."
+      },
+      {
+        "ageRange": "30-49",
+        "weightRange": "30-150",
+        "heightRange": "110-230",
+        "gender": "female",
+        "exerciseTime": "50 minutes of moderate exercise."
+      },
+      {
+        "ageRange": "50-64",
+        "weightRange": "30-150",
+        "heightRange": "110-230",
+        "gender": "male",
+        "exerciseTime": "45 minutes of moderate exercise."
+      },
+      {
+        "ageRange": "50-64",
+        "weightRange": "30-150",
+        "heightRange": "110-230",
+        "gender": "female",
+        "exerciseTime": "40 minutes of moderate exercise."
+      },
+      {
+        "ageRange": "65-79",
+        "weightRange": "30-150",
+        "heightRange": "110-230",
+        "gender": "male",
+        "exerciseTime": "30 minutes of light to moderate exercise."
+      },
+      {
+        "ageRange": "65-79",
+        "weightRange": "30-150",
+        "heightRange": "110-230",
+        "gender": "female",
+        "exerciseTime": "30 minutes of light to moderate exercise."
+      },
+      {
+        "ageRange": "80+",
+        "weightRange": "30-150",
+        "heightRange": "110-230",
+        "gender": "male",
+        "exerciseTime": "20 minutes of light exercise."
+      },
+      {
+        "ageRange": "80+",
+        "weightRange": "30-150",
+        "heightRange": "110-230",
+        "gender": "female",
+        "exerciseTime": "20 minutes of light exercise."
+      }
+    ]
+  }
+  
