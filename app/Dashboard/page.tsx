@@ -9,6 +9,7 @@ import toast from 'react-hot-toast';
 import { FaDumbbell, FaUser, FaHeartbeat, FaUtensils, FaComments, FaBook, FaVideo, FaBullhorn, FaChartLine, FaBars, FaTimes } from 'react-icons/fa';
 import DashboardContent from '@/components/DashboardContents/Dashboard.Content';
 import Profile_content from '@/components/DashboardContents/Profile';
+import { useEffect } from 'react';
 
 interface SidebarProps {
   setSelectedSection: (section: string) => void;
@@ -16,15 +17,53 @@ interface SidebarProps {
   toggleMenu: () => void;
 }
 
+interface UserData {
+  _id: string;
+  username: string;
+  email: string;
+  isVerified: boolean;
+  age?: number; // Optional age
+  gender?: string; // Optional gender
+  dietaryPreferences: string[];
+  healthParameters: {
+      height?: number;
+      weight?: number;
+      bloodPressure?: {
+          systolic?: number;
+          diastolic?: number;
+      };
+      allergies?: string[];
+  };
+}
 
 const Sidebar: React.FC<SidebarProps> = ({ setSelectedSection, isOpen, toggleMenu }) => {
+  const [data, setData] = useState<UserData | null>(null);
   const router = useRouter();
   const handleSectionChange = (section: string) => {
     setSelectedSection(section);
     if (isOpen) toggleMenu(); // Close the menu if it's open
   };
 
-    const logout = async () => {
+  const getUserDetails = async () => {
+    try {
+        const res = await axios.get<{ data: UserData }>('/api/users/me');
+        const userData: UserData = {
+            ...res.data.data,
+            dietaryPreferences: res.data.data.dietaryPreferences || [],
+            healthParameters: res.data.data.healthParameters || {},
+        };
+        setData(userData);
+    } catch (error) {
+        console.error(error);
+        toast.error("Failed to fetch user details");
+    }
+};
+
+  useEffect(() => {
+    getUserDetails();
+  }, []);
+
+  const logout = async () => {
       try {
           await axios.get('/api/users/logout');
           toast.success("Logout Successful");
@@ -101,23 +140,6 @@ const Sidebar: React.FC<SidebarProps> = ({ setSelectedSection, isOpen, toggleMen
 };
 
 // Profile Component
-const Profile = () => (
-  <section className="p-6 bg-white rounded-lg shadow-md">
-    <h2 className="text-2xl font-bold mb-4">Profile</h2>
-    <div className="flex flex-col md:flex-row items-center">
-      <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gray-300 flex items-center justify-center text-3xl font-semibold text-gray-700 mb-4 md:mb-0">
-        A
-      </div>
-      <div className="md:ml-6 text-center md:text-left">
-        <h3 className="text-xl font-semibold">Alex Johnson</h3>
-        <p className="text-gray-600">alex.johnson@example.com</p>
-        <p className="text-gray-600">Weight: 75.2 Kg</p>
-        <p className="text-gray-600">Height: 5'9"</p>
-        <button className="mt-4 bg-orange-500 text-white py-2 px-4 rounded">Edit Profile</button>
-      </div>
-    </div>
-  </section>
-);
 
 
 const Dashboard = () => {
@@ -149,7 +171,7 @@ const Dashboard = () => {
       case 'announcement':
         return <div>Announcement Content</div>;
       default:
-        return <Profile />;
+        return <Profile_content/>;
     }
   };
 
