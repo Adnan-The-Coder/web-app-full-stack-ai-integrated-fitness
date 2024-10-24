@@ -8,6 +8,8 @@ interface UserData {
     username: string;
     email: string;
     isVerified: boolean;
+    age?: number; // Optional age
+    gender?: string; // Optional gender
     dietaryPreferences: string[];
     healthParameters: {
         height?: number;
@@ -49,7 +51,7 @@ const ProfileContent = () => {
         setIsEditing(!isEditing);
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, field: string) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>, field: string) => {
         if (field === 'dietaryPreferences') {
             const preferences = e.target.value.split(",").map(item => item.trim());
             setFormData(prev => prev ? {
@@ -94,8 +96,8 @@ const ProfileContent = () => {
                     A
                 </div>
                 <div className="md:ml-6 text-center md:text-left">
-                    <h3 className="text-xl font-semibold">{data?.username}</h3>
-                    <p className="text-gray-600">{data?.email}</p>
+                    <h3 className="text-xl font-semibold">{data?.username || 'Add your info'}</h3>
+                    <p className="text-gray-600">{data?.email || 'Add your info'}</p>
                     <p className="text-gray-600">{data?.isVerified ? "Verified" : "Not Verified"}</p>
                     <button className="mt-4 bg-orange-500 text-white py-2 px-4 rounded" onClick={handleEditToggle}>
                         {isEditing ? "Cancel" : "Edit Profile"}
@@ -116,11 +118,8 @@ const ProfileContent = () => {
                                 className="p-2 border rounded w-2/3"
                             />
                         ) : (
-                            <span>{data?.username}</span>
+                            <span>{data?.username || 'Add your info'}</span>
                         )}
-                        <button onClick={isEditing ? handleSave : handleEditToggle} className="ml-2 text-blue-500">
-                            <i className="fas fa-edit"></i>
-                        </button>
                     </div>
 
                     <div className="flex justify-between items-center">
@@ -133,11 +132,40 @@ const ProfileContent = () => {
                                 className="p-2 border rounded w-2/3"
                             />
                         ) : (
-                            <span>{data?.email}</span>
+                            <span>{data?.email || 'Add your info'}</span>
                         )}
-                        <button onClick={isEditing ? handleSave : handleEditToggle} className="ml-2 text-blue-500">
-                            <i className="fas fa-edit"></i>
-                        </button>
+                    </div>
+
+                    <div className="flex justify-between items-center">
+                        <span className="font-medium">Age:</span>
+                        {isEditing ? (
+                            <input
+                                type="number"
+                                value={formData?.age || ''}
+                                onChange={(e) => handleChange(e, 'age')}
+                                className="p-2 border rounded w-2/3"
+                            />
+                        ) : (
+                            <span>{data?.age !== undefined ? data.age : 'Add your info'}</span>
+                        )}
+                    </div>
+
+                    <div className="flex justify-between items-center">
+                        <span className="font-medium">Gender:</span>
+                        {isEditing ? (
+                            <select
+                                value={formData?.gender || ''}
+                                onChange={(e) => handleChange(e, 'gender')}
+                                className="p-2 border rounded w-2/3"
+                            >
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        ) : (
+                            <span>{data?.gender || 'Add your info'}</span>
+                        )}
                     </div>
 
                     <div className="flex justify-between items-center">
@@ -150,11 +178,8 @@ const ProfileContent = () => {
                                 className="p-2 border rounded w-2/3"
                             />
                         ) : (
-                            <span>{data?.healthParameters?.height}</span>
+                            <span>{data?.healthParameters?.height !== undefined ? data.healthParameters.height : 'Add your info'}</span>
                         )}
-                        <button onClick={isEditing ? handleSave : handleEditToggle} className="ml-2 text-blue-500">
-                            <i className="fas fa-edit"></i>
-                        </button>
                     </div>
 
                     <div className="flex justify-between items-center">
@@ -167,11 +192,8 @@ const ProfileContent = () => {
                                 className="p-2 border rounded w-2/3"
                             />
                         ) : (
-                            <span>{data?.healthParameters?.weight}</span>
+                            <span>{data?.healthParameters?.weight !== undefined ? data.healthParameters.weight : 'Add your info'}</span>
                         )}
-                        <button onClick={isEditing ? handleSave : handleEditToggle} className="ml-2 text-blue-500">
-                            <i className="fas fa-edit"></i>
-                        </button>
                     </div>
 
                     <div className="flex justify-between items-center">
@@ -184,13 +206,17 @@ const ProfileContent = () => {
                                 rows={2}
                             />
                         ) : (
-                            <span>{data?.dietaryPreferences.join(", ")}</span>
+                            <span>{data?.dietaryPreferences.length ? data.dietaryPreferences.join(", ") : 'Add your info'}</span>
                         )}
-                        <button onClick={isEditing ? handleSave : handleEditToggle} className="ml-2 text-blue-500">
-                            <i className="fas fa-edit"></i>
-                        </button>
                     </div>
                 </div>
+                {isEditing && (
+                    <div className="flex justify-center mt-4">
+                        <button className="bg-green-500 text-white py-2 px-4 rounded" onClick={handleSave}>
+                            Save Changes
+                        </button>
+                    </div>
+                )}
             </div>
         </section>
     );

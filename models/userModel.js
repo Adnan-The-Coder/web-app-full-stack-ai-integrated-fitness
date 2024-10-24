@@ -63,6 +63,15 @@ const userSchema = new mongoose.Schema({
         },
         doctorName: String, // Optional field for doctor's name
     }],
+    age: {
+        type: Number, // Age of the user
+        required: false, // Not required
+    },
+    gender: {
+        type: String, // Gender of the user
+        required: false, // Not required
+        enum: ['male', 'female', 'non-binary', 'other'], // Optional: restrict to specific values
+    },
 });
 
 const User = mongoose.models.users || mongoose.model("users", userSchema);
