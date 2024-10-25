@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-// import DashboardContent from '@/components/Dashboard.Content';
 import axios from 'axios';
-import { NextResponse } from 'next/server';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
@@ -10,6 +8,7 @@ import { FaDumbbell, FaUser, FaHeartbeat, FaUtensils, FaComments, FaBook, FaVide
 import DashboardContent from '@/components/DashboardContents/Dashboard.Content';
 import Profile_content from '@/components/DashboardContents/Profile';
 import { useEffect } from 'react';
+import Workout from '@/components/DashboardContents/Workout';
 
 interface SidebarProps {
   setSelectedSection: (section: string) => void;
@@ -157,7 +156,7 @@ const Dashboard = () => {
       case 'profile':
         return <Profile_content/>;
       case 'workout-plan':
-        return <div>Workout Plan Content</div>;
+        return <Workout/>
       case 'health-assistant':
         return <div>Health Assistant Content</div>;
       case 'meal-plans':
